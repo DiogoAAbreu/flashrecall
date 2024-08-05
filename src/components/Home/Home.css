@@ -1,0 +1,39 @@
+img {
+    width: 136px;
+}
+
+h1 {
+    color: white;
+    font-family: 'Righteous', sans-serif;
+    font-size: 36px;
+    margin: 30px 0px;
+}
+
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.botao {
+    width: 246px;
+    height: 54px;
+    font-family: "Recursive", sans-serif;
+    background-color: #FFFFFF;
+    color: #D70900;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #D70900;
+    cursor: pointer;
+}
+
+.botao:hover {
+    filter: brightness(1.5);
+}
+
+.escondido {
+    display: none;
+}
