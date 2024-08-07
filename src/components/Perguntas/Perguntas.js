@@ -1,15 +1,16 @@
 import logoP from '../../assets/images/logo-pequeno.png'
+import Pergunta from '../Pergunta/Pergunta'
 import './Perguntas.css'
 
 const questoes = [
-    { pergunta: 'O que é JSX?', resposta: 'Uma extensão de linguagem do JavaScript' },
-    { pergunta: 'O React é __ ', resposta: 'uma biblioteca JavaScript para construção de interfaces' },
-    { pergunta: 'Componentes devem iniciar com __', resposta: 'letra maiúscula' },
-    { pergunta: 'Podemos colocar __ dentro do JSX', resposta: 'expressões' },
-    { pergunta: 'O ReactDOM nos ajuda __', resposta: 'interagindo com a DOM para colocar componentes React na mesma' },
-    { pergunta: 'Usamos o npm para __', resposta: 'gerenciar os pacotes necessários e suas dependências' },
-    { pergunta: 'Usamos props para __', resposta: 'passar diferentes informações para componentes' },
-    { pergunta: 'Usamos estado (state) para __', resposta: 'dizer para o React quais informações quando atualizadas devem renderizar a tela novamente' },
+    { questao: 'O que é JSX?', resposta: 'Uma extensão de linguagem do JavaScript' },
+    { questao: 'O React é __ ', resposta: 'uma biblioteca JavaScript para construção de interfaces' },
+    { questao: 'Componentes devem iniciar com __', resposta: 'letra maiúscula' },
+    { questao: 'Podemos colocar __ dentro do JSX', resposta: 'expressões' },
+    { questao: 'O ReactDOM nos ajuda __', resposta: 'interagindo com a DOM para colocar componentes React na mesma' },
+    { questao: 'Usamos o npm para __', resposta: 'gerenciar os pacotes necessários e suas dependências' },
+    { questao: 'Usamos props para __', resposta: 'passar diferentes informações para componentes' },
+    { questao: 'Usamos estado (state) para __', resposta: 'dizer para o React quais informações quando atualizadas devem renderizar a tela novamente' },
 ]
 
 export default function Perguntas({ escondido, esconderTela }) {
@@ -17,7 +18,11 @@ export default function Perguntas({ escondido, esconderTela }) {
         <div className={` ${escondido ? 'escondido' : ''}`}>
             <Logo />
             <div className='perguntas'>
-                {questoes.map((questao, index) => <Pergunta key={index} index={index} />)}
+                {questoes.map((questao, index) => <Pergunta
+                    key={index}
+                    index={index}
+                    questao={questao.questao}
+                    resposta={questao.resposta} />)}
             </div>
             <Footer qtdQuestoes={questoes.length} />
         </div>
@@ -29,15 +34,6 @@ function Logo() {
         <img src={logoP} />
         <span>ZapRecall</span>
     </header>)
-}
-
-function Pergunta({ index }) {
-    return (
-        <div className='pergunta'>
-            Pergunta {index + 1}
-            <ion-icon name="play-outline"></ion-icon>
-        </div>
-    )
 }
 
 function Footer({ qtdQuestoes }) {

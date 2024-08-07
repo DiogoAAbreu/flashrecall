@@ -24,28 +24,12 @@ span {
 
 .perguntas {
     margin: 130px 0px;
-}
-
-.pergunta {
-    width: 300px;
-    height: 65px;
-    font-family: 'Recursive', sans-serif;
-    background-color: #FFFFFF;
-    font-size: 16px;
-    color: #333333;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    padding: 10px;
-    font-weight: bold;
-    border-radius: 5px;
-    box-shadow: 0px 4px 5px 0px #00000026;
-    margin: 20px;
 }
 
-ion-icon {
-    font-size: 30px;
-}
+
 
 footer {
     font-family: 'Recursive', sans-serif;
@@ -62,4 +46,5 @@ footer {
     align-items: center;
     justify-content: center;
     z-index: 1;
+
 }
