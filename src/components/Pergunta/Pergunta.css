@@ -37,6 +37,7 @@ ion-icon {
     justify-content: space-between;
     font-weight: normal;
     position: relative;
+    margin-bottom: 10px;
 }
 
 .setinha {
@@ -74,4 +75,22 @@ ion-icon {
 
 .nao-lembrei {
     background-color: #FF3030;
+}
+
+.acertei,
+ion-icon[name="checkmark-circle"] {
+    color: #2FBE34;
+    text-decoration: line-through;
+}
+
+.quase,
+ion-icon[name="remove-circle"] {
+    color: #FF922E;
+    text-decoration: line-through;
+}
+
+.errei,
+ion-icon[name="close-circle"] {
+    color: #FF3030;
+    text-decoration: line-through;
 }

@@ -1,6 +1,8 @@
+import Footer from '../Footer/Footer'
 import logoP from '../../assets/images/logo-pequeno.png'
 import Pergunta from '../Pergunta/Pergunta'
 import './Perguntas.css'
+import { useState } from 'react'
 
 const questoes = [
     { questao: 'O que é JSX?', resposta: 'Uma extensão de linguagem do JavaScript' },
@@ -13,19 +15,24 @@ const questoes = [
     { questao: 'Usamos estado (state) para __', resposta: 'dizer para o React quais informações quando atualizadas devem renderizar a tela novamente' },
 ]
 
+
+
 export default function Perguntas({ escondido, esconderTela }) {
+    const [listaRespostas, setListaRespostas] = useState([])
     return (
-        <div className={` ${escondido ? 'escondido' : ''}`}>
+        <>
             <Logo />
             <div className='perguntas'>
                 {questoes.map((questao, index) => <Pergunta
                     key={index}
                     index={index}
                     questao={questao.questao}
-                    resposta={questao.resposta} />)}
+                    resposta={questao.resposta}
+                    setListaRespostas={setListaRespostas}
+                    listaRespostas={listaRespostas} />)}
             </div>
-            <Footer qtdQuestoes={questoes.length} />
-        </div>
+            <Footer qtdQuestoes={questoes.length} listaRespostas={listaRespostas} />
+        </>
     )
 }
 
@@ -34,13 +41,5 @@ function Logo() {
         <img src={logoP} />
         <span>ZapRecall</span>
     </header>)
-}
-
-function Footer({ qtdQuestoes }) {
-    return (
-        <footer>
-            0/{qtdQuestoes} CONCLUÍDOS
-        </footer>
-    )
 }
 
