@@ -10,7 +10,10 @@ export default function Pergunta(
         questao,
         resposta,
         setListaRespostas,
-        listaRespostas
+        listaRespostas,
+        setConcluido,
+        qtdQuestoes,
+        qtdRespostas
     }) {
 
     const [revelada, setRevelada] = useState(false);
@@ -30,6 +33,9 @@ export default function Pergunta(
                     listaRespostas={listaRespostas}
                     setRevelada={setRevelada}
                     setRespondida={setRespondida}
+                    setConcluido={setConcluido}
+                    qtdQuestoes={qtdQuestoes}
+                    qtdRespostas={qtdRespostas}
                 />
                 :
                 <NaoRevelada
@@ -71,7 +77,10 @@ function Revelada({
     setListaRespostas,
     listaRespostas,
     setRevelada,
-    setRespondida }) {
+    setRespondida,
+    setConcluido,
+    qtdQuestoes,
+    qtdRespostas }) {
     return (
         <div className='revelada'>
             {exibirResposta ? <p>{resposta}</p> : <p>{questao}</p>}
@@ -80,7 +89,10 @@ function Revelada({
                     setListaRespostas={setListaRespostas}
                     listaRespostas={listaRespostas}
                     setRevelada={setRevelada}
-                    setRespondida={setRespondida} />
+                    setRespondida={setRespondida}
+                    setConcluido={setConcluido}
+                    qtdQuestoes={qtdQuestoes}
+                    qtdRespostas={qtdRespostas} />
                 :
                 <img
                     className='setinha'
@@ -94,12 +106,19 @@ function Botoes({
     setRespondida,
     setListaRespostas,
     listaRespostas,
-    setRevelada }) {
+    setRevelada,
+    setConcluido,
+    qtdQuestoes,
+    qtdRespostas }) {
 
     function responder(resultado, nameIcon) {
         setRespondida(resultado);
         setListaRespostas([...listaRespostas, nameIcon])
         setRevelada(false)
+        console.log(qtdQuestoes, qtdRespostas)
+        if ((qtdQuestoes - 1) == qtdRespostas) {
+            setConcluido(true)
+        }
     }
     return (
         <div className='botoes'>

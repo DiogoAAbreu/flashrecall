@@ -35,3 +35,31 @@ ion-icon[name="close-circle-sharp"] {
     font-size: 23px;
     color: #FF3030;
 }
+
+.concluido {
+    font-size: 18px;
+    height: 171px;
+}
+
+.resultado {
+    color: #333333;
+    font-size: 18px;
+    width: 200px;
+    text-align: center;
+}
+
+.resultado>span {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333333;
+    margin-left: 10px;
+}
+
+.resultado>p {
+    font-size: 18px;
+    margin: 10px 0px;
+}
+
+.resultado>img {
+    width: 23px;
+}
