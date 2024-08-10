@@ -4,6 +4,10 @@ import Pergunta from '../Pergunta/Pergunta'
 import './Perguntas.css'
 import { useState } from 'react'
 
+function comparador() {
+    return Math.random() - 0.5;
+}
+
 const questoes = [
     { questao: 'O que é JSX?', resposta: 'Uma extensão de linguagem do JavaScript' },
     { questao: 'O React é __', resposta: 'Uma biblioteca JavaScript para construção de interfaces' },
@@ -13,13 +17,13 @@ const questoes = [
     { questao: 'Usamos o npm para __ ', resposta: 'gerenciar os pacotes necessários e suas dependências' },
     { questao: 'Usamos props para __ ', resposta: 'passar diferentes informações para componentes ' },
     { questao: 'Usamos estado (state) para __ ', resposta: 'dizer para o React quais informações quando atualizadas devem renderizar a tela novamente' },
-]
+].sort(comparador)
 
 
-
-export default function Perguntas({ escondido, esconderTela }) {
+export default function Perguntas() {
     const [listaRespostas, setListaRespostas] = useState([]);
     const [concluido, setConcluido] = useState(false);
+
     return (
         <>
             <Logo />
