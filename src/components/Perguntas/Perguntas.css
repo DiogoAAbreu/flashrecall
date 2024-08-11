@@ -14,7 +14,7 @@ span {
     align-items: center;
     justify-content: center;
     position: fixed;
-    width: 375px;
+    width: 100vw;
     height: 120px;
     top: 0px;
     left: 0px;
