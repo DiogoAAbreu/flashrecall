@@ -46,8 +46,8 @@ export default function Perguntas() {
 
 function Logo() {
     return (<header className='logo'>
-        <img src={logoP} />
-        <span>ZapRecall</span>
+        <img src={logoP} alt="logo" />
+        <span>FlashRecall</span>
     </header>)
 }
 

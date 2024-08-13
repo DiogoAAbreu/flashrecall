@@ -1,6 +1,6 @@
-import './Pergunta.css'
-import setinha from '../../assets/images/setinha.png'
-import { useState } from 'react'
+import './Pergunta.css';
+import setinha from '../../assets/images/setinha.png';
+import { useState } from 'react';
 
 
 
@@ -47,7 +47,7 @@ export default function Pergunta(
     )
 }
 
-// criar respondida com zap, quase não lembrei, naolembrei
+
 function NaoRevelada({
     setRevelada,
     index,
@@ -97,7 +97,8 @@ function Revelada({
                 <img
                     className='setinha'
                     onClick={() => { setExibirResposta(true) }}
-                    src={setinha} />}
+                    src={setinha}
+                    alt="virar" />}
         </div>
     )
 }
@@ -116,7 +117,7 @@ function Botoes({
         setListaRespostas([...listaRespostas, nameIcon])
         setRevelada(false)
         console.log(qtdQuestoes, qtdRespostas)
-        if ((qtdQuestoes - 1) == qtdRespostas) {
+        if ((qtdQuestoes - 1) === qtdRespostas) {
             setConcluido(true)
         }
     }
@@ -128,8 +129,8 @@ function Botoes({
             <div onClick={() => { responder('quase', 'remove-circle-sharp') }} className='quase-nao-lembrei'>
                 Quase não lembrei
             </div>
-            <div onClick={() => { responder('acertei', 'checkmark-circle-sharp') }} className='zap'>
-                Zap!
+            <div onClick={() => { responder('acertei', 'checkmark-circle-sharp') }} className='flash'>
+                Flash!
             </div>
         </div>
     )
